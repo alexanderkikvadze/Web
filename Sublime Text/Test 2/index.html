@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      ul.dropdown-menu {
+          background-color: DarkGrey;
+      }
+      </style>
 
   </head>
   <body>
@@ -20,10 +29,15 @@
 
         <!-- logo -->
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a href="#" class="navbar-brand">The New System</a>
         </div>
         <!-- Menu Items -->
-        <div>
+        <div class="dropdown collapse navbar-collapse" id="mainNavBar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">News</a></li>
@@ -32,11 +46,13 @@
 
             <!-- Dropdown Menu-->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Profile <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown">My Profile
+                 <span class="caret"></span>
+              </a>
               <ul class="dropdown-menu">
-                <li><a href="#">Friend</a></li>
-                <li><a href="#">Photo</a></li>
-                <li><a href="#">Settings</a></li>
+                <li class="dropdown-item"><a class="dropdown-item" href="#">Friend</a></li>
+                <li class="dropdown-item"><a class="dropdown-item" href="#">Photo</a></li>
+                <li class="dropdown-item"><a class="dropdown-item" href="#">Settings</a></li>
               </ul>
             </li>
           </ul>
@@ -47,42 +63,6 @@
         </div>
       </div>
     </nav>
-    
-      <div id="wrapper">
-          
-          <!--SideBar-->
-            <div id="sidebar-wrapper">  
-              <ul class="sibebar-nav">
-                <li><a href="#"></a>Account</li>
-                <li><a href="#"></a>Settings</li>
-                <li><a href="#"></a>LogOut</li>
-              </ul>
 
-            </div>
-          <!--Page Content-->
-            <div id="page-contact-wrapper">
-              <div>
-                <div>
-                  <div>
-                    <a href="#" class="btn btn-success" id="menu-toggle">Toggle Menu</a>
-                    <h1>Siber Layout are cool</h1>
-                    <p>aaa sss ddd fff ggg hhh
-                       zzz xx cc vvv bbb nnn mmm
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-      </div>
-
-        <!-- Menu taggle Script-->
-      <script>
-        $("menu-toggle").click( function (e) {
-          e.preventDefault();
-          $("wrapper").toggleClass("toggled");
-        })
-      </script>
   </body>
 </html>
