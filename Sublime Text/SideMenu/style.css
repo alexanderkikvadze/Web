@@ -69,10 +69,3 @@ a, a:focus{
 .bg-wrap .user-logo h3 {
   color: #fff;
   font-size: 18px; }
-  #sidebarCollapse{
-    span{
-      @include media-breakpoint-down(md){
-        display: none;
-      }
-    }
-  }
