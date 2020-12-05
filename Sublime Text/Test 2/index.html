@@ -8,8 +8,11 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--CSS links for left menu-->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">    
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -17,6 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <style type="text/css">
+    
       ul.dropdown-menu {
           background-color: DarkGrey;
       }
@@ -24,45 +28,81 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+    <div>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
 
-        <!-- logo -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" class="navbar-brand">Ananaria is a nice girl</a>
-        </div>
-        <!-- Menu Items -->
-        <div class="dropdown collapse navbar-collapse" id="mainNavBar">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+          <!-- logo -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a href="#" class="navbar-brand">Ananaria is a nice girl</a>
+          </div>
+          <!-- Menu Items -->
+          <div class="dropdown collapse navbar-collapse" id="mainNavBar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
 
-            <!-- Dropdown Menu-->
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown">My Profile
-                 <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-item"><a class="dropdown-item" href="#">Friend</a></li>
-                <li class="dropdown-item"><a class="dropdown-item" href="#">Photo</a></li>
-                <li class="dropdown-item"><a class="dropdown-item" href="#">Settings</a></li>
-              </ul>
-            </li>
-          </ul>
-          <!-- Dropdown Menu Right-->
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">LogOut</a></li>
-          </ul>
+              <!-- Dropdown Menu-->
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">My Profile
+                   <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a class="dropdown-item" href="#">Friend</a></li>
+                  <li class="dropdown-item"><a class="dropdown-item" href="#">Photo</a></li>
+                  <li class="dropdown-item"><a class="dropdown-item" href="#">Settings</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Additional</a></li>
+            </ul>
+            <!-- Dropdown Menu Right-->
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">LogOut</a></li>
+            </ul>
+          </div>
         </div>
+      </nav>
+    </div>    
+    <!--left menu-->
+    <div class="sidenav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+      <!--drop down left menu -->
+      <button class="dropdown-btn">Reports 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="#">Report 1</a>
+        <a href="#">Report 2</a>
+        <a href="#">Report 3</a>
       </div>
-    </nav>
-
+      <a href="#contact">Search</a>
+    </div>
+    <script>
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+      
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } else {
+        dropdownContent.style.display = "block";
+        }
+        });
+      }
+  </script>    
   </body>
 </html>
